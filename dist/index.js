@@ -1,0 +1,8 @@
+/// <reference path="./typings/main.d.ts" />
+var git = require("./smartstring.git");
+var smartstring = {
+    git: git
+};
+module.exports = smartstring;
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDRDQUE0QztBQUM1QyxJQUFPLEdBQUcsV0FBVyxtQkFBbUIsQ0FBQyxDQUFDO0FBRTFDLElBQUksV0FBVyxHQUFHO0lBQ2QsR0FBRyxFQUFHLEdBQUc7Q0FDWixDQUFDO0FBRUYsaUJBQVMsV0FBVyxDQUFDIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8vIDxyZWZlcmVuY2UgcGF0aD1cIi4vdHlwaW5ncy9tYWluLmQudHNcIiAvPlxuaW1wb3J0IGdpdCA9IHJlcXVpcmUoXCIuL3NtYXJ0c3RyaW5nLmdpdFwiKTtcblxubGV0IHNtYXJ0c3RyaW5nID0ge1xuICAgIGdpdCA6IGdpdFxufTtcblxuZXhwb3J0ID0gc21hcnRzdHJpbmc7Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9

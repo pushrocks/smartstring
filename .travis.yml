@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+deploy:
+  provider: npm
+  email: npm@lossless.digital
+  api_key:
+    secure: oKx1gdYYBnaoUcpxn3WM4SdZdInIYaa3ZgbXLSh88K+PjbcSw3NNbYEnAtWFV1eAQQchDjOHId4D1Ne68DtJb5umahvhYoejtZzawjPaa6Uyi46VPk31wXYzZJyadiyefuwOhLLMM4i3yzYwEC2BeTpbU8Tvaj6B42DoySKNGUnSF9+K2wsFNp13mRje6PLe+fjo+9H4CEKLwf74alwvAWd/PLzv47KKdCZ4/9zX7TxevrIBNie+n6VxjqXm/dTv9k7J3dCunojehBr9X9sn1sd8mR+FexjcgfCA2dz8ViP8qZCslzZixGVuasmjpQH9OabrlOfQ6e+Hs4puv+U7s53SVa9nWntiYHloT29UKCPG6ofuDFq5Nd+1PCNvPfrh99F87IKTOw9DQ9Lx7Q//To4LrbnsC85/uHgkWHhbr/ZGax7wuX9og1rem1MSjYr7gQ1sx9edtDSQe3Yjhi22xDREL5/uCbnThmrd1P44CtAU7UG4TQvnHADFqi4Oogf/VBQvsC+aUJPSfZuoxX31yCYuNToH65j1Vblj9tYuPdHSriPj2OdxbuWh68lpgsh7K64Imb++3oKjh3fKZEzeJsByI+QytyUwO/Qu1c6whlkyv8yMyoaD0WARufU+zcG4P7j4rFlAO/CoezSd6l5HBUiXJNe7XniIi6KZjA1zkZc=
+  on:
+    tags: true
+    repo: pushrocks/smartstring
