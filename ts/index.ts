@@ -1,8 +1,10 @@
 /// <reference path="./typings/main.d.ts" />
-import git = require("./smartstring.git");
+import SmartstringGit = require("./smartstring.git");
+import SmartstringDocker = require("./smartstring.docker");
 
 let smartstring = {
-    git : git
+    git : SmartstringGit,
+    docker: SmartstringDocker
 };
 
 export = smartstring;

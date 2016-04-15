@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/pushrocks/smartstring#readme",
   "devDependencies": {
-    "npmts": "^3.1.2",
-    "should": "^8.2.2"
+    "npmts": "^5.0.4",
+    "should": "^8.3.1"
   },
   "dependencies": {
-    "beautylog": "^3.0.2"
+    "beautylog": "^4.1.2"
   }
 }

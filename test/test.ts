@@ -26,4 +26,14 @@ describe("smartstring",function(){
                 .should.equal("git@github.com:pushrocks/smartstring.git");
         });
     })
+    describe(".docker",function(){
+        describe(".makeEnvObject",function(){
+            it("should create a Env Object",function(){
+                let envStringArray = ["VIRTUAL_HOST=sub.domain.tld","DEFAULT_HOST=some.domain.com"];
+                let envObject = smartstring.docker.makeEnvObject(envStringArray);
+                envObject.VIRTUAL_HOST.should.equal("sub.domain.tld");
+                envObject.DEFAULT_HOST.should.equal("some.domain.com");
+            })
+        })
+    })
 });
