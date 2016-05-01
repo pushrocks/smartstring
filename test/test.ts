@@ -36,4 +36,16 @@ describe("smartstring",function(){
             })
         })
     })
+    describe(".typescript",function(){
+        describe(".referenceRegex",function(){
+            it("should match reference paths",function(){
+                smartstring.typescript.regexReferencePath.test("/// <reference path=\"\" />")
+                    .should.be.true();
+                smartstring.typescript.regexReferencePath.test("/// <reference path='' />")
+                    .should.be.true();
+                smartstring.typescript.regexReferencePath.test("/// <referencepath=\"\" />")
+                    .should.be.false();
+            })
+        })
+    })
 });
