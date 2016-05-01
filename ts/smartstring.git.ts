@@ -4,7 +4,7 @@ import plugins = require("./smartstring.plugins");
 /* ---------------------------------------------- *
  * ------------------ classes ------------------- *
  * ---------------------------------------------- */
-class gitRepo {
+export class gitRepo {
     host:string;
     user:string;
     repo:string;
@@ -55,9 +55,7 @@ let gitLink = function(hostArg:string, userArg:string, repoArg:string, tokenArg:
 /* ---------------------------------------------- *
  * ------------------ exports ------------------- *
  * ---------------------------------------------- */
-let git = function(stringArg:string,tokenArg?:string){
+export let git = function(stringArg:string,tokenArg?:string){
     let localGitRepo = new gitRepo(stringArg,tokenArg);
     return localGitRepo;
 };
-
-export = git;

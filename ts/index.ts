@@ -4,7 +4,7 @@ import SmartstringDocker = require("./smartstring.docker");
 import SmartstringTypescript = require("./smartstring.typescript");
 
 let smartstring = {
-    git : SmartstringGit,
+    git : SmartstringGit.git,
     docker: SmartstringDocker,
     typescript: SmartstringTypescript
 };
