@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "bundles a bunch of (regex) matching and altering methods.",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "test": "(npmts)"
   },
@@ -21,7 +22,7 @@
   },
   "homepage": "https://github.com/pushrocks/smartstring#readme",
   "devDependencies": {
-    "npmts": "^5.0.4",
+    "npmts": "^5.1.4",
     "should": "^8.3.1"
   },
   "dependencies": {

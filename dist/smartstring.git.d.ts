@@ -1,4 +1,3 @@
-/// <reference path="typings/main.d.ts" />
 export declare class gitRepo {
     host: string;
     user: string;
