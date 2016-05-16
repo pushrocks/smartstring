@@ -3,10 +3,6 @@ import SmartstringGit = require("./smartstring.git");
 import SmartstringDocker = require("./smartstring.docker");
 import SmartstringTypescript = require("./smartstring.typescript");
 
-let smartstring = {
-    git : SmartstringGit.git,
-    docker: SmartstringDocker,
-    typescript: SmartstringTypescript
-};
-
-export = smartstring;
+export let git = SmartstringGit.git;
+export let docker = SmartstringDocker;
+export let typescript = SmartstringTypescript;
