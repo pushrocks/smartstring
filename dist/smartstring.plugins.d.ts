@@ -1,4 +1,2 @@
-declare let plugins: {
-    beautylog: any;
-};
-export = plugins;
+import "typings-global";
+export import beautylog = require("beautylog");

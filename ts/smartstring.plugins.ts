@@ -1,3 +1,3 @@
-/// <reference path="./typings/main.d.ts" />
+import "typings-global"
 
 export import beautylog = require("beautylog");

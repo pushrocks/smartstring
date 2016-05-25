@@ -1,4 +1,5 @@
-export declare class gitRepo {
+import "typings-global";
+export declare class GitRepo {
     host: string;
     user: string;
     repo: string;
@@ -7,4 +8,3 @@ export declare class gitRepo {
     httpsUrl: string;
     constructor(stringArg: string, tokenArg?: string);
 }
-export declare let git: (stringArg: string, tokenArg?: string) => gitRepo;

@@ -1,10 +1,30 @@
-/// <reference path="../ts/typings/main.d.ts" />
-let smartstring = require("../dist/index.js");
+import "typings-test"
+import * as smartstring from "../dist/index";
 let should = require("should");
 
 describe("smartstring",function(){
-    describe(".git()",function(){
-        let testGit = smartstring.git("git+https://github.com/pushrocks/smartstring.git");
+    describe(".Domain class",function(){
+        let testDomain:smartstring.Domain;
+        it("should create a new Domain object",function(){
+            testDomain = new smartstring.Domain("level3D.level2D.level1D");
+            testDomain.should.be.instanceof(smartstring.Domain);
+        });
+        it("should have a .topLevel",function(){
+            testDomain.topLevel.should.equal("level1D");
+        });
+        it("should have a .level2",function(){
+            testDomain.level2.should.equal("level2D");
+        });
+        it("should have a .level3",function(){
+            testDomain.level3.should.equal("level3D");
+        });
+    })
+    describe(".Git class",function(){
+        let testGit:smartstring.GitRepo;
+        it("should create a new Git class GitRepo",function(){
+            testGit = new smartstring.GitRepo("git+https://github.com/pushrocks/smartstring.git");
+            testGit.should.be.instanceof(smartstring.GitRepo);
+        })
         it("should return a .host",function(){
             testGit.host
                 .should.equal("github.com");

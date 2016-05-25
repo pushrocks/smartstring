@@ -1,10 +1,10 @@
-/// <reference path="./typings/main.d.ts" />
+import "typings-global"
 import plugins = require("./smartstring.plugins");
 
 /* ---------------------------------------------- *
  * ------------------ classes ------------------- *
  * ---------------------------------------------- */
-export class gitRepo {
+export class GitRepo {
     host:string;
     user:string;
     repo:string;
@@ -50,12 +50,4 @@ let gitLink = function(hostArg:string, userArg:string, repoArg:string, tokenArg:
             break;
     }
     return returnString;
-};
-
-/* ---------------------------------------------- *
- * ------------------ exports ------------------- *
- * ---------------------------------------------- */
-export let git = function(stringArg:string,tokenArg?:string){
-    let localGitRepo = new gitRepo(stringArg,tokenArg);
-    return localGitRepo;
 };
