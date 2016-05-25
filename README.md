@@ -20,8 +20,8 @@ myGitRepo.host // "github.com"
 myGitRepo.user // "someorg"
 myGitRepo.repo // "somerepo"
 myGitRepo.accessToken // accessToken if specified with https
-myGitRepo.sshUrl // ssh URL (computed also from https)
-myGitRepo.httpsUrl // https URL (computed also from ssh)
+myGitRepo.sshUrl // "git@github.com:someorg/somerepo.git" (computed also from https)
+myGitRepo.httpsUrl // "https://github.com/someorg/somerepo.git" (computed also from ssh)
 
 // smartstring.Domain class
 let myDomain = new smartstring.Domain("https://sub.main.tld");

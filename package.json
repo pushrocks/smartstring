@@ -1,7 +1,7 @@
 {
   "name": "smartstring",
   "version": "2.0.3",
-  "description": "bundles a bunch of (regex) matching and altering methods.",
+  "description": "handle strings in smart ways. TypeScript ready.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
