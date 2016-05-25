@@ -9,6 +9,7 @@ export class Domain {
     level4:string;
     level5:string;
     protocol:string;
+    zoneName:string;
     //aliases
     topLevel:string;
     domainName;
@@ -21,6 +22,9 @@ export class Domain {
         this.level3 = regexMatches[2];
         this.level4 = regexMatches[3];
         this.level5 = regexMatches[4];
+        this.protocol = protocolRegex(domainStringArg)[1];
+        this.zoneName = this.level2 + "." + this.level1; 
+        
         // aliases
         this.topLevel = this.level1;
         this.domainName = this.level2;
@@ -38,3 +42,10 @@ let domainRegex = function(stringArg:string){
     });
     return regexMatchesFiltered;
 };
+
+let protocolRegex = function(stringArg:string){
+    let regexString = /^([a-zA-Z0-9]*):\/\//;
+    let regexMatches = regexString.exec(stringArg);
+    console.log(regexMatches);
+    return regexMatches;
+}

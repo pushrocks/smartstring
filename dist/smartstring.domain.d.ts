@@ -7,6 +7,7 @@ export declare class Domain {
     level4: string;
     level5: string;
     protocol: string;
+    zoneName: string;
     topLevel: string;
     domainName: any;
     subDomain: any;

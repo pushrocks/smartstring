@@ -6,7 +6,7 @@ describe("smartstring",function(){
     describe(".Domain class",function(){
         let testDomain:smartstring.Domain;
         it("should create a new Domain object",function(){
-            testDomain = new smartstring.Domain("level3D.level2D.level1D");
+            testDomain = new smartstring.Domain("https://level3D.level2D.level1D");
             testDomain.should.be.instanceof(smartstring.Domain);
         });
         it("should have a .topLevel",function(){
@@ -18,6 +18,12 @@ describe("smartstring",function(){
         it("should have a .level3",function(){
             testDomain.level3.should.equal("level3D");
         });
+        it("should have the correct dns zone name",function(){
+            testDomain.zoneName.should.equal("level2D.level1D");
+        })
+        it ("should have the correct protocol",function(){
+            testDomain.protocol.should.equal("https");
+        })
     })
     describe(".Git class",function(){
         let testGit:smartstring.GitRepo;
