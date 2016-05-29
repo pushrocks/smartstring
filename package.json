@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pushrocks/smartstring.git"
+    "url": "git+https://gitlab.com/pushrocks/smartstring.git"
   },
   "keywords": [
     "regex",
@@ -18,9 +18,9 @@
   "author": "Lossless GmbH",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pushrocks/smartstring/issues"
+    "url": "https://gitlab.com/pushrocks/smartstring/issues"
   },
-  "homepage": "https://github.com/pushrocks/smartstring#readme",
+  "homepage": "https://gitlab.com/pushrocks/smartstring#readme",
   "devDependencies": {
     "npmts": "^5.1.13",
     "should": "^8.4.0",
