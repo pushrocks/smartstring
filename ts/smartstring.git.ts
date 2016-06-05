@@ -26,7 +26,7 @@ export class GitRepo {
  * ------------------ helpers ------------------- *
  * ---------------------------------------------- */
 let gitRegex = function(stringArg:string){
-    let regexString = /(?:git\+|git\@|https\:\/\/|)(?:https\:\/\/|)([^\/|\:]*)(?:\/|:)([^\/]+)*(?:\/|:)([^\.]+)/;
+    let regexString = /([a-zA-Z0-9\-\.]*)(?:\/|\:)([a-zA-Z0-9\-]*)(?:\/)([a-zA-Z0-9\-]*)(?:\.git)/;
     let regexMatches = regexString.exec(stringArg);
     return regexMatches;
 };
