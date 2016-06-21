@@ -15,11 +15,17 @@ export class Domain {
     domainName;
     subDomain;
     constructor(domainStringArg:string){
-        this.fullName = domainStringArg;
         let regexMatches = domainRegex(domainStringArg);
+        this.fullName = "";
         for(let i = 1; i <= 5; i++){
             if(regexMatches[i - 1]) {
-                this["level" + i.toString()] = regexMatches[i - 1]
+                let localMatch = regexMatches[i - 1]
+                this["level" + i.toString()] = localMatch;
+                if (this.fullName == ""){
+                    this.fullName = localMatch;
+                } else {
+                    this.fullName = localMatch + "." + this.fullName;
+                }
             } else {
                 this["level" + i.toString()] = undefined;
             };
