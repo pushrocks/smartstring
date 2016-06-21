@@ -17,12 +17,14 @@ export class Domain {
     constructor(domainStringArg:string){
         this.fullName = domainStringArg;
         let regexMatches = domainRegex(domainStringArg);
-        this.level1 = regexMatches[0];
-        this.level2 = regexMatches[1];
-        this.level3 = regexMatches[2];
-        this.level4 = regexMatches[3];
-        this.level5 = regexMatches[4];
-        this.protocol = protocolRegex(domainStringArg)[1];
+        for(let i = 1; i <= 5; i++){
+            if(regexMatches[i - 1]) {
+                this["level" + i.toString()] = regexMatches[i - 1]
+            } else {
+                this["level" + i.toString()] = undefined;
+            };
+        };
+        this.protocol = protocolRegex(domainStringArg);
         this.zoneName = this.level2 + "." + this.level1; 
         
         // aliases
@@ -36,7 +38,8 @@ export class Domain {
 let domainRegex = function(stringArg:string){
     let regexString = /([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}$/;
     let regexMatches = regexString.exec(stringArg);
-    regexMatches.reverse();
+    regexMatches.reverse(); //make sure we build the domain from toplevel to subdomain (reversed order)
+    regexMatches.pop(); // pop the last element, which is, since we reversed the Array, the full String of matched elements
     let regexMatchesFiltered = regexMatches.filter(function(stringArg:string){
         return(stringArg != "");
     });
@@ -46,6 +49,9 @@ let domainRegex = function(stringArg:string){
 let protocolRegex = function(stringArg:string){
     let regexString = /^([a-zA-Z0-9]*):\/\//;
     let regexMatches = regexString.exec(stringArg);
-    console.log(regexMatches);
-    return regexMatches;
+    if(regexMatches){
+        return regexMatches[1];
+    } else {
+        return undefined;
+    }
 }

@@ -5,9 +5,11 @@ let should = require("should");
 describe("smartstring",function(){
     describe(".Domain class",function(){
         let testDomain:smartstring.Domain;
+        let testDomain2:smartstring.Domain;
         it("should create a new Domain object",function(){
             testDomain = new smartstring.Domain("https://level3D.level2D.level1D");
             testDomain.should.be.instanceof(smartstring.Domain);
+            console.log(testDomain);
         });
         it("should have a .topLevel",function(){
             testDomain.topLevel.should.equal("level1D");
@@ -24,6 +26,10 @@ describe("smartstring",function(){
         it ("should have the correct protocol",function(){
             testDomain.protocol.should.equal("https");
         })
+        it("testDomain2 should be a basic domain",function(){
+            testDomain2 = new smartstring.Domain("bleu.de");
+            console.log(testDomain2);
+        });
     })
     describe(".Git class",function(){
         let testGit:smartstring.GitRepo;
@@ -56,7 +62,7 @@ describe("smartstring",function(){
         describe(".makeEnvObject",function(){
             it("should create a Env Object",function(){
                 let envStringArray = ["VIRTUAL_HOST=sub.domain.tld","DEFAULT_HOST=some.domain.com"];
-                let envObject = smartstring.docker.makeEnvObject(envStringArray);
+                let envObject:any = smartstring.docker.makeEnvObject(envStringArray);
                 envObject.VIRTUAL_HOST.should.equal("sub.domain.tld");
                 envObject.DEFAULT_HOST.should.equal("some.domain.com");
             })
