@@ -42,7 +42,7 @@ export class Domain {
 
 
 let domainRegex = function(stringArg:string){
-    let regexString = /([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}$/;
+    let regexString = /([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}$/;
     let regexMatches = regexString.exec(stringArg);
     regexMatches.reverse(); //make sure we build the domain from toplevel to subdomain (reversed order)
     regexMatches.pop(); // pop the last element, which is, since we reversed the Array, the full String of matched elements
