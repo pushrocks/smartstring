@@ -1,4 +1,3 @@
-import "typings-global";
 export declare class Domain {
     fullName: string;
     level1: string;

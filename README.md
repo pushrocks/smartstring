@@ -3,7 +3,6 @@ handle strings in smart ways. TypeScript ready.
 
 ## Status
 [![Build Status](https://travis-ci.org/pushrocks/smartstring.svg?branch=master)](https://travis-ci.org/pushrocks/smartstring)
-[![Build status](https://ci.appveyor.com/api/projects/status/x4oe2xxwwcbxmk1h/branch/master?svg=true)](https://ci.appveyor.com/project/philkunz/smartstring/branch/master)
 [![Dependency Status](https://david-dm.org/pushrocks/smartstring.svg)](https://david-dm.org/pushrocks/smartstring)
 [![bitHound Dependencies](https://www.bithound.io/github/pushrocks/smartstring/badges/dependencies.svg)](https://www.bithound.io/github/pushrocks/smartstring/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/pushrocks/smartstring/badges/code.svg)](https://www.bithound.io/github/pushrocks/smartstring)

@@ -1,4 +1,3 @@
-import "typings-global";
 export declare class GitRepo {
     host: string;
     user: string;

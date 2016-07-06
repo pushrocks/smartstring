@@ -1,5 +1,4 @@
-import "typings-global"
-import plugins = require("./smartstring.plugins");
+import * as plugins from "./smartstring.plugins";
 
 /* ---------------------------------------------- *
  * ------------------ classes ------------------- *

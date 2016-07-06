@@ -22,12 +22,12 @@
   },
   "homepage": "https://gitlab.com/pushrocks/smartstring#readme",
   "devDependencies": {
-    "npmts": "^5.2.1",
-    "should": "^9.0.0",
+    "npmts-g": "^5.2.6",
+    "should": "^9.0.2",
     "typings-test": "^1.0.1"
   },
   "dependencies": {
-    "beautylog": "^5.0.8",
-    "typings-global": "^1.0.3"
+    "beautylog": "^5.0.13",
+    "typings-global": "^1.0.6"
   }
 }
