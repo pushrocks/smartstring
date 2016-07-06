@@ -1,14 +1,26 @@
 "use strict";
 var Domain = (function () {
     function Domain(domainStringArg) {
-        this.fullName = domainStringArg;
         var regexMatches = domainRegex(domainStringArg);
-        this.level1 = regexMatches[0];
-        this.level2 = regexMatches[1];
-        this.level3 = regexMatches[2];
-        this.level4 = regexMatches[3];
-        this.level5 = regexMatches[4];
-        this.protocol = protocolRegex(domainStringArg)[1];
+        this.fullName = "";
+        for (var i = 1; i <= 5; i++) {
+            if (regexMatches[i - 1]) {
+                var localMatch = regexMatches[i - 1];
+                this["level" + i.toString()] = localMatch;
+                if (this.fullName == "") {
+                    this.fullName = localMatch;
+                }
+                else {
+                    this.fullName = localMatch + "." + this.fullName;
+                }
+            }
+            else {
+                this["level" + i.toString()] = undefined;
+            }
+            ;
+        }
+        ;
+        this.protocol = protocolRegex(domainStringArg);
         this.zoneName = this.level2 + "." + this.level1;
         // aliases
         this.topLevel = this.level1;
@@ -19,9 +31,10 @@ var Domain = (function () {
 }());
 exports.Domain = Domain;
 var domainRegex = function (stringArg) {
-    var regexString = /([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}([a-zA-Z0-9]*)\.{0,1}$/;
+    var regexString = /([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}$/;
     var regexMatches = regexString.exec(stringArg);
-    regexMatches.reverse();
+    regexMatches.reverse(); //make sure we build the domain from toplevel to subdomain (reversed order)
+    regexMatches.pop(); // pop the last element, which is, since we reversed the Array, the full String of matched elements
     var regexMatchesFiltered = regexMatches.filter(function (stringArg) {
         return (stringArg != "");
     });
@@ -30,7 +43,11 @@ var domainRegex = function (stringArg) {
 var protocolRegex = function (stringArg) {
     var regexString = /^([a-zA-Z0-9]*):\/\//;
     var regexMatches = regexString.exec(stringArg);
-    console.log(regexMatches);
-    return regexMatches;
+    if (regexMatches) {
+        return regexMatches[1];
+    }
+    else {
+        return undefined;
+    }
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic21hcnRzdHJpbmcuZG9tYWluLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vdHMvc21hcnRzdHJpbmcuZG9tYWluLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFFQTtJQWFJLGdCQUFZLGVBQXNCO1FBQzlCLElBQUksQ0FBQyxRQUFRLEdBQUcsZUFBZSxDQUFDO1FBQ2hDLElBQUksWUFBWSxHQUFHLFdBQVcsQ0FBQyxlQUFlLENBQUMsQ0FBQztRQUNoRCxJQUFJLENBQUMsTUFBTSxHQUFHLFlBQVksQ0FBQyxDQUFDLENBQUMsQ0FBQztRQUM5QixJQUFJLENBQUMsTUFBTSxHQUFHLFlBQVksQ0FBQyxDQUFDLENBQUMsQ0FBQztRQUM5QixJQUFJLENBQUMsTUFBTSxHQUFHLFlBQVksQ0FBQyxDQUFDLENBQUMsQ0FBQztRQUM5QixJQUFJLENBQUMsTUFBTSxHQUFHLFlBQVksQ0FBQyxDQUFDLENBQUMsQ0FBQztRQUM5QixJQUFJLENBQUMsTUFBTSxHQUFHLFlBQVksQ0FBQyxDQUFDLENBQUMsQ0FBQztRQUM5QixJQUFJLENBQUMsUUFBUSxHQUFHLGFBQWEsQ0FBQyxlQUFlLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQztRQUNsRCxJQUFJLENBQUMsUUFBUSxHQUFHLElBQUksQ0FBQyxNQUFNLEdBQUcsR0FBRyxHQUFHLElBQUksQ0FBQyxNQUFNLENBQUM7UUFFaEQsVUFBVTtRQUNWLElBQUksQ0FBQyxRQUFRLEdBQUcsSUFBSSxDQUFDLE1BQU0sQ0FBQztRQUM1QixJQUFJLENBQUMsVUFBVSxHQUFHLElBQUksQ0FBQyxNQUFNLENBQUM7UUFDOUIsSUFBSSxDQUFDLFNBQVMsR0FBRyxJQUFJLENBQUMsTUFBTSxDQUFDO0lBQ2pDLENBQUM7SUFDTCxhQUFDO0FBQUQsQ0FBQyxBQTdCRCxJQTZCQztBQTdCWSxjQUFNLFNBNkJsQixDQUFBO0FBR0QsSUFBSSxXQUFXLEdBQUcsVUFBUyxTQUFnQjtJQUN2QyxJQUFJLFdBQVcsR0FBRyw0R0FBNEcsQ0FBQztJQUMvSCxJQUFJLFlBQVksR0FBRyxXQUFXLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFDO0lBQy9DLFlBQVksQ0FBQyxPQUFPLEVBQUUsQ0FBQztJQUN2QixJQUFJLG9CQUFvQixHQUFHLFlBQVksQ0FBQyxNQUFNLENBQUMsVUFBUyxTQUFnQjtRQUNwRSxNQUFNLENBQUEsQ0FBQyxTQUFTLElBQUksRUFBRSxDQUFDLENBQUM7SUFDNUIsQ0FBQyxDQUFDLENBQUM7SUFDSCxNQUFNLENBQUMsb0JBQW9CLENBQUM7QUFDaEMsQ0FBQyxDQUFDO0FBRUYsSUFBSSxhQUFhLEdBQUcsVUFBUyxTQUFnQjtJQUN6QyxJQUFJLFdBQVcsR0FBRyxzQkFBc0IsQ0FBQztJQUN6QyxJQUFJLFlBQVksR0FBRyxXQUFXLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFDO0lBQy9DLE9BQU8sQ0FBQyxHQUFHLENBQUMsWUFBWSxDQUFDLENBQUM7SUFDMUIsTUFBTSxDQUFDLFlBQVksQ0FBQztBQUN4QixDQUFDLENBQUEifQ==
+
