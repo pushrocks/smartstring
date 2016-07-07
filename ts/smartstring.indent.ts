@@ -1,29 +1,42 @@
 import * as plugins from "./smartstring.plugins";
 
 let splitString = (stringArg:string):string[] => {
-    let stringArray:string[] = [];
-
-    return stringArray;
-
+    return stringArg.split("\n");
 };
 
 let joinString = (stringArrayArg:string[]):string => {
-    let localString:string = "";
+    let resultString:string = "";
     for(let line of stringArrayArg){
-        localString = localString + line + "\n";
+        resultString = resultString + line + "\n";
     };
-    return localString;
+    return resultString;
 }
 
 export let indent = (stringArg:string,spaceAmount:number):string => {
-
-    return;
+    let resultString:string;
+    return resultString;
 };
 
 export let indentWithPrefix = (stringArg:string,prefixArg:string):string => {
-    return;
+    let resultString:string;
+    return resultString;
 };
 
 export let deIndent = (stringArg:string):string => {
-    return
+    let resultString:string;
+    let splitStringArray:string[] = splitString(stringArg);
+    let minCommonLeftOffset:number;
+    let deIndentRegex = /^(\s*)/;
+    for(let stringItem of splitStringArray){
+        let offsetString = deIndentRegex.exec(stringItem)[1];
+        if (typeof minCommonLeftOffset == "undefined" || offsetString.length < minCommonLeftOffset){
+            minCommonLeftOffset = offsetString.length;
+        };
+    };
+    let resultSplitStringArray = [];
+    for(let stringItem of splitStringArray){
+        resultSplitStringArray.push(stringItem.substr(minCommonLeftOffset));
+    };
+    resultString = joinString(resultSplitStringArray);
+    return resultString;
 }
