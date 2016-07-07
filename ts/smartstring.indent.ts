@@ -40,14 +40,18 @@ export let indentWithPrefix = (stringArg:string,prefixArg:string):string => {
     return resultString;
 };
 
-export let normalizeIndent = (stringArg:string):string => {
+export let normalize = (stringArg:string):string => {
     let resultString:string;
     let splitStringArray:string[] = splitString(stringArg);
     let minCommonLeftOffset:number;
     let deIndentRegex = /^(\s*)/;
+    let emptyLineRegex = /^(\s*)$/
     for(let stringItem of splitStringArray){
         let offsetString = deIndentRegex.exec(stringItem)[1];
-        if (typeof minCommonLeftOffset == "undefined" || offsetString.length < minCommonLeftOffset){
+        if (
+            (typeof minCommonLeftOffset == "undefined" || offsetString.length < minCommonLeftOffset)
+            && !emptyLineRegex.test(stringItem)
+        ){
             minCommonLeftOffset = offsetString.length;
         };
     };

@@ -73,13 +73,16 @@ describe("smartstring",function(){
                     base
                         should be indented
                             some more
+
                     base
                         indented
                 `;
-        describe(".normalizeIndent()",function(){
-            it("should normalizeIndent a string",function(){
-                testString = smartstring.indent.normalizeIndent(testString);
+        describe(".normalize()",function(){
+            it("should normalize a string",function(){
+                testString = smartstring.indent.normalize(testString);
                 console.log(testString);
+                let zoneNameArg = "test1";
+                let destinationIpArg = "111";
             });
         });
 
