@@ -76,15 +76,18 @@ describe("smartstring",function(){
                     base
                         indented
                 `;
-        describe(".deIndent()",function(){
-            it("should deindent a string",function(){
-                testString = smartstring.indent.deIndent(testString);
+        describe(".normalizeIndent()",function(){
+            it("should normalizeIndent a string",function(){
+                testString = smartstring.indent.normalizeIndent(testString);
                 console.log(testString);
             });
         });
 
         describe(".indentWithPrefix",function(){
-            it("should indent")
+            it("should indent",function(){
+                testString = smartstring.indent.indentWithPrefix(testString,">> ");
+                console.log(testString);
+            })
         })
     });
     describe(".typescript",function(){

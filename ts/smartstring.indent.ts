@@ -1,7 +1,8 @@
 import * as plugins from "./smartstring.plugins";
 
 let splitString = (stringArg:string):string[] => {
-    return stringArg.split("\n");
+    let resultArray = stringArg.split("\n");
+    return cleanStringArray(resultArray);
 };
 
 let joinString = (stringArrayArg:string[]):string => {
@@ -30,13 +31,18 @@ export let indent = (stringArg:string,spaceAmount:number):string => {
 
 export let indentWithPrefix = (stringArg:string,prefixArg:string):string => {
     let resultString:string;
+    let stringArray = splitString(stringArg);
+    let resultArray:string[] = [];
+    for(let stringItem of stringArray){
+        resultArray.push(prefixArg + stringItem); 
+    };
+    resultString = joinString(resultArray);
     return resultString;
 };
 
-export let deIndent = (stringArg:string):string => {
+export let normalizeIndent = (stringArg:string):string => {
     let resultString:string;
     let splitStringArray:string[] = splitString(stringArg);
-    splitStringArray = cleanStringArray(splitStringArray);
     let minCommonLeftOffset:number;
     let deIndentRegex = /^(\s*)/;
     for(let stringItem of splitStringArray){
