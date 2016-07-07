@@ -10,6 +10,17 @@ let joinString = (stringArrayArg:string[]):string => {
         resultString = resultString + line + "\n";
     };
     return resultString;
+};
+
+let cleanStringArray = (stringArrayArg:string[]):string[] => {
+    let testRegex = /^[\s]*$/;
+    if(testRegex.test(stringArrayArg[0])){
+        stringArrayArg.shift();
+    }
+    if(testRegex.test(stringArrayArg[stringArrayArg.length - 1])){
+        stringArrayArg.pop();
+    };
+    return stringArrayArg;
 }
 
 export let indent = (stringArg:string,spaceAmount:number):string => {
@@ -25,6 +36,7 @@ export let indentWithPrefix = (stringArg:string,prefixArg:string):string => {
 export let deIndent = (stringArg:string):string => {
     let resultString:string;
     let splitStringArray:string[] = splitString(stringArg);
+    splitStringArray = cleanStringArray(splitStringArray);
     let minCommonLeftOffset:number;
     let deIndentRegex = /^(\s*)/;
     for(let stringItem of splitStringArray){

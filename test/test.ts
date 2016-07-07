@@ -67,7 +67,26 @@ describe("smartstring",function(){
                 envObject.DEFAULT_HOST.should.equal("some.domain.com");
             })
         })
-    })
+    });
+    describe(".indent",function(){
+        let testString = `
+                    base
+                        should be indented
+                            some more
+                    base
+                        indented
+                `;
+        describe(".deIndent()",function(){
+            it("should deindent a string",function(){
+                testString = smartstring.indent.deIndent(testString);
+                console.log(testString);
+            });
+        });
+
+        describe(".indentWithPrefix",function(){
+            it("should indent")
+        })
+    });
     describe(".typescript",function(){
         describe(".referenceRegex",function(){
             it("should match reference paths",function(){
