@@ -5,10 +5,10 @@
  * @returns {}
  */
 exports.makeEnvObject = function (envArrayArg) {
-    var returnObject = {};
-    var regexString = /(.*)=(.*)/;
-    for (var envKey in envArrayArg) {
-        var regexMatches = regexString.exec(envArrayArg[envKey]);
+    let returnObject = {};
+    let regexString = /(.*)=(.*)/;
+    for (let envKey in envArrayArg) {
+        let regexMatches = regexString.exec(envArrayArg[envKey]);
         returnObject[regexMatches[1]] = regexMatches[2];
     }
     ;
