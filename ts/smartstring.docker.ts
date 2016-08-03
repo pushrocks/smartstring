@@ -5,12 +5,14 @@ import * as plugins from "./smartstring.plugins";
  * @param envArrayArg
  * @returns {}
  */
-export let makeEnvObject = function(envArrayArg:string[]){
+export let makeEnvObject = function (envArrayArg: string[]) {
     let returnObject = {};
     let regexString = /(.*)=(.*)/;
-    for(let envKey in envArrayArg){
-        let regexMatches = regexString.exec(envArrayArg[envKey]);
-        returnObject[regexMatches[1]] = regexMatches[2];
-    };
+    if (typeof envArrayArg !== "undefined") {
+        for (let envKey in envArrayArg) {
+            let regexMatches = regexString.exec(envArrayArg[envKey]);
+            returnObject[regexMatches[1]] = regexMatches[2];
+        };
+    }
     return returnObject;
 };
