@@ -1,2 +1,2 @@
-import "typings-global";
-export import beautylog = require("beautylog");
+import 'typings-global';
+export declare let jsBase64: any;

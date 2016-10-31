@@ -1,4 +1,4 @@
-import * as plugins from "./smartstring.plugins";
+import * as plugins from './smartstring.plugins'
 
 /**
  * converts an erray of env strings from docker remote api to an usable object.
@@ -6,13 +6,13 @@ import * as plugins from "./smartstring.plugins";
  * @returns {}
  */
 export let makeEnvObject = function (envArrayArg: string[]) {
-    let returnObject = {};
-    let regexString = /(.*)=(.*)/;
-    if (typeof envArrayArg !== "undefined") {
+    let returnObject = {}
+    let regexString = /(.*)=(.*)/
+    if (typeof envArrayArg !== 'undefined') {
         for (let envKey in envArrayArg) {
-            let regexMatches = regexString.exec(envArrayArg[envKey]);
-            returnObject[regexMatches[1]] = regexMatches[2];
+            let regexMatches = regexString.exec(envArrayArg[envKey])
+            returnObject[regexMatches[1]] = regexMatches[2]
         };
     }
-    return returnObject;
-};
+    return returnObject
+}
