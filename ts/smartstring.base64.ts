@@ -16,10 +16,10 @@ export class Base64 {
                 this.refString = inputStringArg
                 break
             case 'base64':
-                this.refString = plugins.jsBase64.decode(inputStringArg)
+                this.refString = base64.decode(inputStringArg)
                 break
             case 'base64uri':
-                this.refString = plugins.jsBase64.decode(inputStringArg)
+                this.refString = base64.decode(inputStringArg)
         }
     }
 
@@ -34,13 +34,36 @@ export class Base64 {
      * the base64 encoded version of the original string
      */
     get base64String() {
-        return plugins.jsBase64.encode(this.refString)
+        return base64.encode(this.refString)
     }
 
     /**
      * the base64uri encoded version of the original string
      */
     get base64StringUri() {
-        return plugins.jsBase64.encodeURI(this.refString)
+        return base64.encodeUri(this.refString)
+    }
+}
+
+export let base64 = {
+    /**
+     * encodes the string
+     */
+    encode: (stringArg: string) => {
+        return plugins.jsBase64.encode(stringArg)
+    },
+
+    /**
+     * encodes a stringArg to base64 uri style
+     */
+    encodeUri: (stringArg: string) => {
+        return plugins.jsBase64.encodeURI(stringArg)
+    },
+
+    /**
+     * decodes a base64 encoded string
+     */
+    decode: (stringArg: string) => {
+        return plugins.jsBase64.decode(stringArg)
     }
 }

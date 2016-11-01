@@ -21,3 +21,8 @@ export declare class Base64 {
      */
     readonly base64StringUri: any;
 }
+export declare let base64: {
+    encode: (stringArg: string) => any;
+    encodeUri: (stringArg: string) => any;
+    decode: (stringArg: string) => any;
+};
