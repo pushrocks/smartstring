@@ -40,7 +40,7 @@ export class Base64 {
     /**
      * the base64uri encoded version of the original string
      */
-    get base64StringUri() {
+    get base64UriString() {
         return base64.encodeUri(this.refString)
     }
 }

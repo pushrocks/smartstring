@@ -10,8 +10,8 @@ describe('smartstring', function () {
             should(testBase64).be.instanceOf(smartstring.Base64);
         });
         it('should read output a file as base64 and base64uri', function () {
-            should(testBase64.base64String).not.equal(testBase64.base64StringUri);
-            let testBase64_2 = new smartstring.Base64(testBase64.base64StringUri, 'base64uri');
+            should(testBase64.base64String).not.equal(testBase64.base64UriString);
+            let testBase64_2 = new smartstring.Base64(testBase64.base64UriString, 'base64uri');
             should(testBase64_2.simpleString).equal(testBase64.simpleString);
         });
     });

@@ -19,7 +19,7 @@ export declare class Base64 {
     /**
      * the base64uri encoded version of the original string
      */
-    readonly base64StringUri: any;
+    readonly base64UriString: any;
 }
 export declare let base64: {
     encode: (stringArg: string) => any;
