@@ -20,7 +20,7 @@ handle strings in smart ways. TypeScript ready.
 ## Usage
 Use TypeScript for intellisense.
 
-```typescript
+```javascript
 import * as smartstring from "smartstring";
 
 // classes
