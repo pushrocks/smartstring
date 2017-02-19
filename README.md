@@ -2,14 +2,15 @@
 handle strings in smart ways. TypeScript ready.
 
 ## Availabililty
-[![npm](https://push.rocks/assets/repo-button-npm.svg)](https://www.npmjs.com/package/smartstring)
-[![git](https://push.rocks/assets/repo-button-git.svg)](https://gitlab.com/pushrocks/smartstring)
-[![git](https://push.rocks/assets/repo-button-mirror.svg)](https://github.com/pushrocks/smartstring)
-[![docs](https://push.rocks/assets/repo-button-docs.svg)](https://pushrocks.gitlab.io/smartstring/)
+[![npm](https://pushrocks.gitlab.io/assets/repo-button-npm.svg)](https://www.npmjs.com/package/smartstring)
+[![git](https://pushrocks.gitlab.io/assets/repo-button-git.svg)](https://GitLab.com/pushrocks/smartstring)
+[![git](https://pushrocks.gitlab.io/assets/repo-button-mirror.svg)](https://github.com/pushrocks/smartstring)
+[![docs](https://pushrocks.gitlab.io/assets/repo-button-docs.svg)](https://pushrocks.gitlab.io/smartstring/)
 
 ## Status for master
-[![build status](https://gitlab.com/pushrocks/smartstring/badges/master/build.svg)](https://gitlab.com/pushrocks/smartstring/commits/master)
-[![coverage report](https://gitlab.com/pushrocks/smartstring/badges/master/coverage.svg)](https://gitlab.com/pushrocks/smartstring/commits/master)
+[![build status](https://GitLab.com/pushrocks/smartstring/badges/master/build.svg)](https://GitLab.com/pushrocks/smartstring/commits/master)
+[![coverage report](https://GitLab.com/pushrocks/smartstring/badges/master/coverage.svg)](https://GitLab.com/pushrocks/smartstring/commits/master)
+[![npm downloads per month](https://img.shields.io/npm/dm/smartstring.svg)](https://www.npmjs.com/package/smartstring)
 [![Dependency Status](https://david-dm.org/pushrocks/smartstring.svg)](https://david-dm.org/pushrocks/smartstring)
 [![bitHound Dependencies](https://www.bithound.io/github/pushrocks/smartstring/badges/dependencies.svg)](https://www.bithound.io/github/pushrocks/smartstring/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/pushrocks/smartstring/badges/code.svg)](https://www.bithound.io/github/pushrocks/smartstring)
@@ -18,7 +19,7 @@ handle strings in smart ways. TypeScript ready.
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ## Usage
-Use TypeScript for intellisense.
+Use TypeScript for best in class instellisense.
 
 ```javascript
 import * as smartstring from "smartstring";
@@ -58,4 +59,8 @@ smartstring.indent.indent('somestring\anotherstring', '>>>> ') // indents a stri
 smartstring.indent.normalize('    somestring\        anotherstring', '>>>> ') // looks for the least amount of indention and removes superflouous space
 ```
 
-[![npm](https://push.rocks/assets/repo-header.svg)](https://push.rocks)
+For further information read the linked docs at the top of this README.
+
+> MIT licensed | **&copy;** [Lossless GmbH](https://lossless.gmbh)
+
+[![repo-footer](https://pushrocks.gitlab.io/assets/repo-footer.svg)](https://push.rocks)
