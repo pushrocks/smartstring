@@ -6,13 +6,13 @@ import * as plugins from './smartstring.plugins'
  * @returns {}
  */
 export let makeEnvObject = function (envArrayArg: string[]) {
-    let returnObject = {}
-    let regexString = /(.*)=(.*)/
-    if (typeof envArrayArg !== 'undefined') {
-        for (let envKey in envArrayArg) {
-            let regexMatches = regexString.exec(envArrayArg[envKey])
-            returnObject[regexMatches[1]] = regexMatches[2]
-        };
+  let returnObject = {}
+  let regexString = /(.*)=(.*)/
+  if (typeof envArrayArg !== 'undefined') {
+    for (let envKey in envArrayArg) {
+      let regexMatches = regexString.exec(envArrayArg[ envKey ])
+      returnObject[ regexMatches[ 1 ] ] = regexMatches[ 2 ]
     }
-    return returnObject
+  }
+  return returnObject
 }
