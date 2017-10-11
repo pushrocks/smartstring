@@ -1,6 +1,6 @@
 {
   "name": "smartstring",
-  "version": "2.0.25",
+  "version": "2.0.26",
   "description": "handle strings in smart ways. TypeScript ready.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
