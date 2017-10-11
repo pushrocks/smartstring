@@ -1,5 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const create = require("./smartstring.create");
+exports.create = create;
 const docker = require("./smartstring.docker");
 exports.docker = docker;
 const indent = require("./smartstring.indent");
@@ -15,4 +17,4 @@ var smartstring_domain_1 = require("./smartstring.domain");
 exports.Domain = smartstring_domain_1.Domain;
 var smartstring_git_1 = require("./smartstring.git");
 exports.GitRepo = smartstring_git_1.GitRepo;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi90cy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLCtDQUE4QztBQU01Qyx3QkFBTTtBQUxSLCtDQUE4QztBQVE1Qyx3QkFBTTtBQVBSLHFEQUFvRDtBQU1sRCw4QkFBUztBQUxYLHVEQUFzRDtBQUlwRCxnQ0FBVTtBQUtaLDJEQUFxRDtBQUE1QyxzQ0FBQSxNQUFNLENBQUE7QUFBRSxzQ0FBQSxNQUFNLENBQUE7QUFDdkIsMkRBQTZDO0FBQXBDLHNDQUFBLE1BQU0sQ0FBQTtBQUNmLHFEQUEyQztBQUFsQyxvQ0FBQSxPQUFPLENBQUEifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi90cy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLCtDQUE4QztBQU81Qyx3QkFBTTtBQU5SLCtDQUE4QztBQU81Qyx3QkFBTTtBQU5SLCtDQUE4QztBQVM1Qyx3QkFBTTtBQVJSLHFEQUFvRDtBQU9sRCw4QkFBUztBQU5YLHVEQUFzRDtBQUtwRCxnQ0FBVTtBQUtaLDJEQUFxRDtBQUE1QyxzQ0FBQSxNQUFNLENBQUE7QUFBRSxzQ0FBQSxNQUFNLENBQUE7QUFDdkIsMkRBQTZDO0FBQXBDLHNDQUFBLE1BQU0sQ0FBQTtBQUNmLHFEQUEyQztBQUFsQyxvQ0FBQSxPQUFPLENBQUEifQ==

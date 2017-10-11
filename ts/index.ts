@@ -1,9 +1,11 @@
+import * as create from './smartstring.create'
 import * as docker from './smartstring.docker'
 import * as indent from './smartstring.indent'
 import * as normalize from './smartstring.normalize'
 import * as typescript from './smartstring.typescript'
 
 export {
+  create,
   docker,
   typescript,
   normalize,

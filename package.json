@@ -26,8 +26,10 @@
     "tapbundle": "^1.1.1"
   },
   "dependencies": {
+    "crypto-random-string": "^1.0.0",
     "js-base64": "^2.3.2",
     "normalize-newline": "^3.0.0",
+    "randomatic": "^1.1.7",
     "strip-indent": "^2.0.0",
     "typings-global": "^1.0.20"
   }

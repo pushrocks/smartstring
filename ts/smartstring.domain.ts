@@ -13,7 +13,7 @@ export class Domain {
   topLevel: string
   domainName
   subDomain
-  constructor(domainStringArg: string) {
+  constructor (domainStringArg: string) {
     let regexMatches = domainRegex(domainStringArg);
     this.fullName = ''
     for (let i = 1; i <= 5; i++) {
