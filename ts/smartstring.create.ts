@@ -1,6 +1,6 @@
 import * as plugins from './smartstring.plugins'
 
-export let createRandomString = (
+export const createRandomString = (
   patternArg: string,
   lengthArg: number,
   optionsArg: any
@@ -8,6 +8,6 @@ export let createRandomString = (
   return plugins.randomatic(patternArg, lengthArg, optionsArg)
 }
 
-export let createCryptoRandomString = (lengthArg): string => {
+export const createCryptoRandomString = (lengthArg): string => {
   return plugins.cryptoRandomString(lengthArg)
 }

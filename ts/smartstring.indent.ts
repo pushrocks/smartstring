@@ -4,7 +4,7 @@ import * as plugins from './smartstring.plugins'
  * splits a string into an array
  * @param stringArg
  */
-let splitStringAtLineBreak = (stringArg: string): string[] => {
+const splitStringAtLineBreak = (stringArg: string): string[] => {
   let resultArray = stringArg.split('\n')
   return cleanStringArray(resultArray)
 }
@@ -13,7 +13,7 @@ let splitStringAtLineBreak = (stringArg: string): string[] => {
  * joins a string together again
  * @param stringArrayArg
  */
-let joinStringWithLineBreaks = (stringArrayArg: string[]): string => {
+const joinStringWithLineBreaks = (stringArrayArg: string[]): string => {
   let resultString: string = ''
   for (let line of stringArrayArg) {
     resultString = resultString + line + '\n' // add new line at end
@@ -25,7 +25,7 @@ let joinStringWithLineBreaks = (stringArrayArg: string[]): string => {
  * cleans first and last line in case they are empty
  * @param stringArrayArg
  */
-let cleanStringArray = (stringArrayArg: string[]): string[] => {
+const cleanStringArray = (stringArrayArg: string[]): string[] => {
   let testRegex = /^[\s]*$/
   if (testRegex.test(stringArrayArg[ 0 ])) {
     stringArrayArg.shift()
@@ -41,7 +41,7 @@ let cleanStringArray = (stringArrayArg: string[]): string[] => {
  * @param stringArg
  * @param spaceAmount
  */
-export let indent = (stringArg: string, spaceAmount: number): string => {
+export const indent = (stringArg: string, spaceAmount: number): string => {
   let localStringArray = splitStringAtLineBreak(stringArg)
   for (let stringArg of localStringArray) {
     stringArg = ' '.repeat(spaceAmount) + stringArg
@@ -55,7 +55,7 @@ export let indent = (stringArg: string, spaceAmount: number): string => {
  * @param stringArg
  * @param prefixArg
  */
-export let indentWithPrefix = (stringArg: string, prefixArg: string): string => {
+export const indentWithPrefix = (stringArg: string, prefixArg: string): string => {
   let resultString: string
   let stringArray = splitStringAtLineBreak(stringArg)
   let resultArray: string[] = []
@@ -66,12 +66,14 @@ export let indentWithPrefix = (stringArg: string, prefixArg: string): string => 
   return resultString
 }
 
-export let normalize = (stringArg: string): string => {
+export const normalize = (stringArg: string): string => {
   let resultString: string
   let splitStringArray: string[] = splitStringAtLineBreak(stringArg)
   let minCommonLeftOffset: number
-  let deIndentRegex = /^(\s*)/
-  let emptyLineRegex = /^(\s*)$/
+
+  const deIndentRegex = /^(\s*)/
+  const emptyLineRegex = /^(\s*)$/
+
   for (let stringItem of splitStringArray) {
     let offsetString = deIndentRegex.exec(stringItem)[ 1 ]
     if (

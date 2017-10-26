@@ -6,7 +6,7 @@ import * as plugins from './smartstring.plugins'
  * @param searchRegExp 
  * @param replacementString 
  */
-export let replaceAll = (stringArg: string, searchRegExp: any, replacementString: string) => {
+export const replaceAll = (stringArg: string, searchRegExp: any, replacementString: string) => {
   return stringArg.replace(new RegExp(searchRegExp, 'g'), replacementString)
 }
 
@@ -14,7 +14,7 @@ export let replaceAll = (stringArg: string, searchRegExp: any, replacementString
  * normalizes a string
  * @param stringArg
  */
-export let standard = (stringArg: string): string => {
+export const standard = (stringArg: string): string => {
   let fix1 = plugins.stripIndent(stringArg) // fix indention
   let fix2 = plugins.normalizeNewline(fix1) // fix newlines
   let fix3 = replaceAll(fix2, /\t/, ' ') // fix tabs

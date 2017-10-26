@@ -3,4 +3,4 @@
  * @param envArrayArg
  * @returns {}
  */
-export declare let makeEnvObject: (envArrayArg: string[]) => {};
+export declare const makeEnvObject: (envArrayArg: string[]) => {};

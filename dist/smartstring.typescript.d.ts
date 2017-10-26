@@ -1,1 +1,1 @@
-export declare let regexReferencePath: RegExp;
+export declare const regexReferencePath: RegExp;

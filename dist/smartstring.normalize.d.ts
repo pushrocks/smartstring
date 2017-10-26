@@ -4,9 +4,9 @@
  * @param searchRegExp
  * @param replacementString
  */
-export declare let replaceAll: (stringArg: string, searchRegExp: any, replacementString: string) => string;
+export declare const replaceAll: (stringArg: string, searchRegExp: any, replacementString: string) => string;
 /**
  * normalizes a string
  * @param stringArg
  */
-export declare let standard: (stringArg: string) => string;
+export declare const standard: (stringArg: string) => string;

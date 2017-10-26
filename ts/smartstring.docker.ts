@@ -5,7 +5,7 @@ import * as plugins from './smartstring.plugins'
  * @param envArrayArg
  * @returns {}
  */
-export let makeEnvObject = function (envArrayArg: string[]) {
+export const makeEnvObject = function (envArrayArg: string[]) {
   let returnObject = {}
   let regexString = /(.*)=(.*)/
   if (typeof envArrayArg !== 'undefined') {
