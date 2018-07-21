@@ -1,5 +1,5 @@
-import * as smartstring from '../ts/index'
-import { tap, expect } from 'tapbundle'
+import * as smartstring from '../ts/index';
+import { tap, expect } from '@pushrocks/tapbundle';
 
 // indent
 let testString = `
@@ -9,20 +9,20 @@ base
 
 base
     indented
-`
+`;
 
 // normalize
 tap.test('expect normalize a string', async () => {
-  testString = smartstring.indent.normalize(testString)
-  console.log(testString)
-  let zoneNameArg = 'test1'
-  let destinationIpArg = '111'
-})
+  testString = smartstring.indent.normalize(testString);
+  console.log(testString);
+  let zoneNameArg = 'test1';
+  let destinationIpArg = '111';
+});
 
 // indent with prefix
 tap.test('expect indent', async () => {
-  testString = smartstring.indent.indentWithPrefix(testString, '>> ')
-  console.log(testString)
-})
+  testString = smartstring.indent.indentWithPrefix(testString, '>> ');
+  console.log(testString);
+});
 
-tap.start()
+tap.start();
