@@ -6,8 +6,8 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "tsrun test/test.base64.ts",
-    "build": "(npmts)"
+    "test": "tstest test/",
+    "build": "(tstest)"
   },
   "repository": {
     "type": "git",
@@ -24,8 +24,11 @@
   },
   "homepage": "https://gitlab.com/pushrocks/smartstring#readme",
   "devDependencies": {
+    "@gitzone/tsbuild": "^2.0.22",
     "@gitzone/tsrun": "^1.1.9",
-    "@pushrocks/tapbundle": "^3.0.1"
+    "@gitzone/tstest": "^1.0.13",
+    "@pushrocks/tapbundle": "^3.0.1",
+    "@types/node": "^10.5.8"
   },
   "dependencies": {
     "crypto-random-string": "^1.0.0",
