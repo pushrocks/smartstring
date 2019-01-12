@@ -8,3 +8,5 @@ export { create, docker, normalize, indent };
 export { Base64, base64 } from './smartstring.base64';
 export { Domain } from './smartstring.domain';
 export { GitRepo } from './smartstring.git';
+
+export { Cryptr } from './smartstring.encryption';
