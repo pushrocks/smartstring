@@ -24,15 +24,15 @@
   },
   "homepage": "https://gitlab.com/pushrocks/smartstring#readme",
   "devDependencies": {
-    "@gitzone/tsbuild": "^2.0.22",
-    "@gitzone/tsrun": "^1.1.13",
-    "@gitzone/tstest": "^1.0.15",
+    "@gitzone/tsbuild": "^2.1.4",
+    "@gitzone/tsrun": "^1.1.17",
+    "@gitzone/tstest": "^1.0.18",
     "@pushrocks/tapbundle": "^3.0.7",
-    "@types/node": "^10.12.10"
+    "@types/node": "^10.12.18"
   },
   "dependencies": {
     "crypto-random-string": "^1.0.0",
-    "js-base64": "^2.4.9",
+    "js-base64": "^2.5.0",
     "normalize-newline": "^3.0.0",
     "randomatic": "^3.1.1",
     "strip-indent": "^2.0.0"
