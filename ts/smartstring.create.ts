@@ -2,12 +2,12 @@ import * as plugins from './smartstring.plugins';
 
 /**
  * creates a random string
- * 
+ *
  * ```ts
  * createRandomString('AAAA')
- * //=> 'AGHR' 
+ * //=> 'AGHR'
  * ```
- * 
+ *
  * @param patternArg the pattern argument to use, Aa0!* are viable pattern descritors
  * @param lengthArg  the length of the random string
  * @param optionsArg options

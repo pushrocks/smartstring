@@ -7,5 +7,15 @@
     "baseImage": "hosttoday/ht-docker-node:npmci",
     "command": "npmci node install stable && npmci npm install && npmci npm test",
     "dockerSock": false
+  },
+  "gitzone": {
+    "module": {
+      "githost": "gitlab.com",
+      "gitscope": "pushrocks",
+      "gitrepo": "smartstring",
+      "shortDescription": "handle strings in smart ways. TypeScript ready.",
+      "npmPackagename": "@pushrocks/smartstring",
+      "license": "MIT"
+    }
   }
 }

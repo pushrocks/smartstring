@@ -46,7 +46,7 @@ export class Domain {
   // helper functions
 
   /** */
-  private _domainRegex (stringArg: string) {
+  private _domainRegex(stringArg: string) {
     const regexString = /([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}$/;
     const regexMatches = regexString.exec(stringArg);
     regexMatches.reverse(); //make sure we build the domain from toplevel to subdomain (reversed order)
@@ -57,7 +57,7 @@ export class Domain {
     return regexMatchesFiltered;
   }
 
-  private _protocolRegex (stringArg: string) {
+  private _protocolRegex(stringArg: string) {
     const regexString = /^([a-zA-Z0-9]*):\/\//;
     const regexMatches = regexString.exec(stringArg);
     if (regexMatches) {
@@ -67,7 +67,7 @@ export class Domain {
     }
   }
 
-  private _portRegex (stringArg: string) {
+  private _portRegex(stringArg: string) {
     const regexString = /^([a-zA-Z0-9]*):\/\//;
     const regexMatches = regexString.exec(stringArg);
     if (regexMatches) {
@@ -76,5 +76,4 @@ export class Domain {
       return undefined;
     }
   }
-
 }
