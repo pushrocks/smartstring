@@ -1,9 +1,11 @@
 // node native
 import * as crypto from 'crypto';
+import * as url from 'url';
 
 export {
-  crypto
-}
+  crypto,
+  url
+};
 
 // third party
 export let jsBase64 = require('js-base64').Base64;

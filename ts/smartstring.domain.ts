@@ -1,24 +1,26 @@
 import * as plugins from './smartstring.plugins';
 
 export class Domain {
-  fullName: string;
-  level1: string;
-  level2: string;
-  level3: string;
-  level4: string;
-  level5: string;
-  protocol: string;
-  zoneName: string;
+  public fullName: string;
+  public level1: string;
+  public level2: string;
+  public level3: string;
+  public level4: string;
+  public level5: string;
+  public protocol: string;
+  public zoneName: string;
   // aliases
-  topLevel: string;
-  domainName;
-  subDomain;
+  public topLevel: string;
+  public domainName;
+  public subDomain;
+  public port;
+  public nodeParsedUrl: plugins.url.UrlWithStringQuery;
   constructor(domainStringArg: string) {
-    let regexMatches = domainRegex(domainStringArg);
+    const regexMatches = this._domainRegex(domainStringArg);
     this.fullName = '';
     for (let i = 1; i <= 5; i++) {
       if (regexMatches[i - 1]) {
-        let localMatch = regexMatches[i - 1];
+        const localMatch = regexMatches[i - 1];
         this['level' + i.toString()] = localMatch;
         if (this.fullName === '') {
           this.fullName = localMatch;
@@ -29,33 +31,50 @@ export class Domain {
         this['level' + i.toString()] = undefined;
       }
     }
-    this.protocol = protocolRegex(domainStringArg);
+    this.protocol = this._protocolRegex(domainStringArg);
     this.zoneName = this.level2 + '.' + this.level1;
 
     // aliases
     this.topLevel = this.level1;
     this.domainName = this.level2;
     this.subDomain = this.level3;
+
+    this.nodeParsedUrl = plugins.url.parse(domainStringArg);
+    this.port = this.nodeParsedUrl.port;
   }
+
+  // helper functions
+
+  /** */
+  private _domainRegex (stringArg: string) {
+    const regexString = /([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}$/;
+    const regexMatches = regexString.exec(stringArg);
+    regexMatches.reverse(); //make sure we build the domain from toplevel to subdomain (reversed order)
+    regexMatches.pop(); // pop the last element, which is, since we reversed the Array, the full String of matched elements
+    const regexMatchesFiltered = regexMatches.filter(function(stringArg: string) {
+      return stringArg !== '';
+    });
+    return regexMatchesFiltered;
+  }
+
+  private _protocolRegex (stringArg: string) {
+    const regexString = /^([a-zA-Z0-9]*):\/\//;
+    const regexMatches = regexString.exec(stringArg);
+    if (regexMatches) {
+      return regexMatches[1];
+    } else {
+      return undefined;
+    }
+  }
+
+  private _portRegex (stringArg: string) {
+    const regexString = /^([a-zA-Z0-9]*):\/\//;
+    const regexMatches = regexString.exec(stringArg);
+    if (regexMatches) {
+      return regexMatches[1];
+    } else {
+      return undefined;
+    }
+  }
+
 }
-
-let domainRegex = function(stringArg: string) {
-  let regexString = /([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}([a-zA-Z0-9\-\_]*)\.{0,1}$/;
-  let regexMatches = regexString.exec(stringArg);
-  regexMatches.reverse(); //make sure we build the domain from toplevel to subdomain (reversed order)
-  regexMatches.pop(); // pop the last element, which is, since we reversed the Array, the full String of matched elements
-  let regexMatchesFiltered = regexMatches.filter(function(stringArg: string) {
-    return stringArg !== '';
-  });
-  return regexMatchesFiltered;
-};
-
-let protocolRegex = function(stringArg: string) {
-  let regexString = /^([a-zA-Z0-9]*):\/\//;
-  let regexMatches = regexString.exec(stringArg);
-  if (regexMatches) {
-    return regexMatches[1];
-  } else {
-    return undefined;
-  }
-};

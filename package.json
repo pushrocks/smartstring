@@ -28,7 +28,9 @@
     "@gitzone/tsrun": "^1.1.17",
     "@gitzone/tstest": "^1.0.18",
     "@pushrocks/tapbundle": "^3.0.7",
-    "@types/node": "^10.12.18"
+    "@types/node": "^10.12.18",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0"
   },
   "dependencies": {
     "crypto-random-string": "^1.0.0",
