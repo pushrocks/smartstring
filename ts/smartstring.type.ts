@@ -69,5 +69,13 @@ export const isUtf8 = (stringArg: string) => {
 };
 
 export const isBase64 = (stringArg: string) => {
-  return stringArg.endsWith('=');
+  const notBase64 = /[^A-Z0-9+\/=]/i;
+  const len = stringArg.length;
+  if (!len || len % 4 !== 0 || notBase64.test(stringArg)) {
+    return false;
+  }
+  const firstPaddingChar = stringArg.indexOf('=');
+  return firstPaddingChar === -1 ||
+    firstPaddingChar === len - 1 ||
+    (firstPaddingChar === len - 2 && stringArg[len - 1] === '=');
 };
