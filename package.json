@@ -38,5 +38,16 @@
     "normalize-newline": "^3.0.0",
     "randomatic": "^3.1.1",
     "strip-indent": "^3.0.0"
-  }
+  },
+  "files": [
+    "ts/**/*",
+    "ts_web/**/*",
+    "dist/**/*",
+    "dist_web/**/*",
+    "dist_ts_web/**/*",
+    "assets/**/*",
+    "cli.js",
+    "npmextra.json",
+    "readme.md"
+  ]
 }
