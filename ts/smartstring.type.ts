@@ -1,4 +1,5 @@
 import * as plugins from './smartstring.plugins';
+import * as base64 from './smartstring.base64';
 
 export const isUtf8 = (stringArg: string) => {
   const bytes = Buffer.from(stringArg);
@@ -74,4 +75,8 @@ export const isUtf8 = (stringArg: string) => {
     }
 
     return true;
+};
+
+export const isBase64 = (stringArg: string) => {
+  return stringArg.endsWith('=');
 };
