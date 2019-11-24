@@ -1,5 +1,5 @@
 // node native
-import * as crypto from 'crypto';
+import crypto from 'crypto';
 import * as url from 'url';
 
 export { crypto, url };
