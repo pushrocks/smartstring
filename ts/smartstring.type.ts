@@ -20,7 +20,8 @@ export const isUtf8 = (stringArg: string) => {
       // non-overlong 2-byte
       0xc2 <= bytes[i] &&
       bytes[i] <= 0xdf &&
-      (0x80 <= bytes[i + 1] && bytes[i + 1] <= 0xbf)
+      0x80 <= bytes[i + 1] &&
+      bytes[i + 1] <= 0xbf
     ) {
       i += 2;
       continue;
@@ -29,14 +30,20 @@ export const isUtf8 = (stringArg: string) => {
     if (
       // excluding overlongs
       (bytes[i] === 0xe0 &&
-        (0xa0 <= bytes[i + 1] && bytes[i + 1] <= 0xbf) &&
-        (0x80 <= bytes[i + 2] && bytes[i + 2] <= 0xbf)) || // straight 3-byte
+        0xa0 <= bytes[i + 1] &&
+        bytes[i + 1] <= 0xbf &&
+        0x80 <= bytes[i + 2] &&
+        bytes[i + 2] <= 0xbf) || // straight 3-byte
       (((0xe1 <= bytes[i] && bytes[i] <= 0xec) || bytes[i] === 0xee || bytes[i] === 0xef) &&
-        (0x80 <= bytes[i + 1] && bytes[i + 1] <= 0xbf) &&
-        (0x80 <= bytes[i + 2] && bytes[i + 2] <= 0xbf)) || // excluding surrogates
+        0x80 <= bytes[i + 1] &&
+        bytes[i + 1] <= 0xbf &&
+        0x80 <= bytes[i + 2] &&
+        bytes[i + 2] <= 0xbf) || // excluding surrogates
       (bytes[i] === 0xed &&
-        (0x80 <= bytes[i + 1] && bytes[i + 1] <= 0x9f) &&
-        (0x80 <= bytes[i + 2] && bytes[i + 2] <= 0xbf))
+        0x80 <= bytes[i + 1] &&
+        bytes[i + 1] <= 0x9f &&
+        0x80 <= bytes[i + 2] &&
+        bytes[i + 2] <= 0xbf)
     ) {
       i += 3;
       continue;
@@ -45,18 +52,27 @@ export const isUtf8 = (stringArg: string) => {
     if (
       // planes 1-3
       (bytes[i] === 0xf0 &&
-        (0x90 <= bytes[i + 1] && bytes[i + 1] <= 0xbf) &&
-        (0x80 <= bytes[i + 2] && bytes[i + 2] <= 0xbf) &&
-        (0x80 <= bytes[i + 3] && bytes[i + 3] <= 0xbf)) || // planes 4-15
+        0x90 <= bytes[i + 1] &&
+        bytes[i + 1] <= 0xbf &&
+        0x80 <= bytes[i + 2] &&
+        bytes[i + 2] <= 0xbf &&
+        0x80 <= bytes[i + 3] &&
+        bytes[i + 3] <= 0xbf) || // planes 4-15
       (0xf1 <= bytes[i] &&
         bytes[i] <= 0xf3 &&
-        (0x80 <= bytes[i + 1] && bytes[i + 1] <= 0xbf) &&
-        (0x80 <= bytes[i + 2] && bytes[i + 2] <= 0xbf) &&
-        (0x80 <= bytes[i + 3] && bytes[i + 3] <= 0xbf)) || // plane 16
+        0x80 <= bytes[i + 1] &&
+        bytes[i + 1] <= 0xbf &&
+        0x80 <= bytes[i + 2] &&
+        bytes[i + 2] <= 0xbf &&
+        0x80 <= bytes[i + 3] &&
+        bytes[i + 3] <= 0xbf) || // plane 16
       (bytes[i] === 0xf4 &&
-        (0x80 <= bytes[i + 1] && bytes[i + 1] <= 0x8f) &&
-        (0x80 <= bytes[i + 2] && bytes[i + 2] <= 0xbf) &&
-        (0x80 <= bytes[i + 3] && bytes[i + 3] <= 0xbf))
+        0x80 <= bytes[i + 1] &&
+        bytes[i + 1] <= 0x8f &&
+        0x80 <= bytes[i + 2] &&
+        bytes[i + 2] <= 0xbf &&
+        0x80 <= bytes[i + 3] &&
+        bytes[i + 3] <= 0xbf)
     ) {
       i += 4;
       continue;
@@ -75,7 +91,9 @@ export const isBase64 = (stringArg: string) => {
     return false;
   }
   const firstPaddingChar = stringArg.indexOf('=');
-  return firstPaddingChar === -1 ||
+  return (
+    firstPaddingChar === -1 ||
     firstPaddingChar === len - 1 ||
-    (firstPaddingChar === len - 2 && stringArg[len - 1] === '=');
+    (firstPaddingChar === len - 2 && stringArg[len - 1] === '=')
+  );
 };
