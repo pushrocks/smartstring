@@ -8,7 +8,7 @@ handle strings in smart ways. TypeScript ready.
 * [docs (typedoc)](https://pushrocks.gitlab.io/smartstring/)
 
 ## Status for master
-[![build status](https://gitlab.com/pushrocks/smartstring/badges/master/build.svg)](https://gitlab.com/pushrocks/smartstring/commits/master)
+[![pipeline status](https://gitlab.com/pushrocks/smartstring/badges/master/pipeline.svg)](https://gitlab.com/pushrocks/smartstring/commits/master)
 [![coverage report](https://gitlab.com/pushrocks/smartstring/badges/master/coverage.svg)](https://gitlab.com/pushrocks/smartstring/commits/master)
 [![npm downloads per month](https://img.shields.io/npm/dm/@pushrocks/smartstring.svg)](https://www.npmjs.com/package/@pushrocks/smartstring)
 [![Known Vulnerabilities](https://snyk.io/test/npm/@pushrocks/smartstring/badge.svg)](https://snyk.io/test/npm/@pushrocks/smartstring)
@@ -57,7 +57,6 @@ smartstring.indent.indent('somestringanotherstring', 4); // indents a string by 
 smartstring.indent.indent('somestringanotherstring', '>>>> '); // indents a string with a prefix
 smartstring.indent.normalize('    somestring        anotherstring', '>>>> '); // looks for the least amount of indention and removes superflouous space
 ```
-
 
 ## Contribution
 

@@ -27,13 +27,13 @@
     "@gitzone/tsbuild": "^2.1.17",
     "@gitzone/tsrun": "^1.2.8",
     "@gitzone/tstest": "^1.0.28",
-    "@pushrocks/tapbundle": "^3.0.13",
-    "@types/node": "^12.7.12",
-    "tslint": "^5.20.0",
+    "@pushrocks/tapbundle": "^3.2.0",
+    "@types/node": "^13.1.8",
+    "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0"
   },
   "dependencies": {
-    "crypto-random-string": "^3.0.1",
+    "crypto-random-string": "^3.1.0",
     "js-base64": "^2.5.1",
     "normalize-newline": "^3.0.0",
     "randomatic": "^3.1.1",
