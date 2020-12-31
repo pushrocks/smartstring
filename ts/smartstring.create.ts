@@ -25,5 +25,5 @@ export const createRandomString = (
  * @param lengthArg the length of the crypto string
  */
 export const createCryptoRandomString = (lengthArg: number): string => {
-  return plugins.nanoid(lengthArg);
+  return plugins.isounique.uni();
 };
