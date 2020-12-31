@@ -21,9 +21,9 @@ export const createRandomString = (
 };
 
 /**
- * creates a crytic string in the speicifed length
+ * creates a cryptic string in the speicifed length
  * @param lengthArg the length of the crypto string
  */
 export const createCryptoRandomString = (lengthArg: number): string => {
-  return plugins.cryptoRandomString(lengthArg);
+  return plugins.nanoid(lengthArg);
 };

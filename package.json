@@ -34,8 +34,8 @@
   },
   "dependencies": {
     "@pushrocks/smartenv": "^4.0.16",
-    "crypto-random-string": "^3.3.0",
     "js-base64": "^2.5.1",
+    "nanoid": "^3.1.20",
     "normalize-newline": "^3.0.0",
     "randomatic": "^3.1.1",
     "strip-indent": "^3.0.0",

@@ -8,9 +8,18 @@ import * as url from 'url';
 export { crypto, url };
 
 // third party
-export let jsBase64 = require('js-base64').Base64;
+const jsBase64 = require('js-base64').Base64;
 
-export let stripIndent = require('strip-indent');
-export let normalizeNewline = require('normalize-newline');
-export let randomatic = require('randomatic');
-export let cryptoRandomString = require('crypto-random-string');
+const stripIndent = require('strip-indent');
+const normalizeNewline = require('normalize-newline');
+const randomatic = require('randomatic');
+
+import { nanoid } from 'nanoid';
+
+export {
+  jsBase64,
+  stripIndent,
+  normalizeNewline,
+  randomatic,
+  nanoid
+}
