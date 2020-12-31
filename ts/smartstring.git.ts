@@ -24,13 +24,13 @@ export class GitRepo {
 /* ---------------------------------------------- *
  * ------------------ helpers ------------------- *
  * ---------------------------------------------- */
-const gitRegex = function(stringArg: string) {
+const gitRegex = function (stringArg: string) {
   const regexString = /([a-zA-Z0-9\-\.]*)(?:\/|\:)([a-zA-Z0-9\-\.]*)(?:\/)([a-zA-Z0-9\-\.]*)(?:\.git)/;
   let regexMatches = regexString.exec(stringArg);
   return regexMatches;
 };
 
-const gitLink = function(
+const gitLink = function (
   hostArg: string,
   userArg: string,
   repoArg: string,

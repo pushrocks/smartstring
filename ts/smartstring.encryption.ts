@@ -10,10 +10,7 @@ export class Cryptr {
       throw new Error('Cryptr: secret must be a non-0-length string');
     }
 
-    this.key = plugins.crypto
-      .createHash('sha256')
-      .update(String(secret))
-      .digest();
+    this.key = plugins.crypto.createHash('sha256').update(String(secret)).digest();
   }
 
   encrypt(value: string) {

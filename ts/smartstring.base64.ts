@@ -65,5 +65,5 @@ export let base64 = {
    */
   decode: (stringArg: string) => {
     return plugins.jsBase64.decode(stringArg);
-  }
+  },
 };

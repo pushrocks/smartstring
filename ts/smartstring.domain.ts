@@ -51,7 +51,7 @@ export class Domain {
     const regexMatches = regexString.exec(stringArg);
     regexMatches.reverse(); //make sure we build the domain from toplevel to subdomain (reversed order)
     regexMatches.pop(); // pop the last element, which is, since we reversed the Array, the full String of matched elements
-    const regexMatchesFiltered = regexMatches.filter(function(stringArg: string) {
+    const regexMatchesFiltered = regexMatches.filter(function (stringArg: string) {
       return stringArg !== '';
     });
     return regexMatchesFiltered;

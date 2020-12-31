@@ -1,5 +1,8 @@
 // node native
-import crypto from 'crypto';
+import * as smartenv from '@pushrocks/smartenv';
+const smartenvInstance = new smartenv.Smartenv();
+const crypto = smartenvInstance.getSafeNodeModule('crypto');
+
 import * as url from 'url';
 
 export { crypto, url };
