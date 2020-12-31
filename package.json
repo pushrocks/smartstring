@@ -1,6 +1,6 @@
 {
   "name": "@pushrocks/smartstring",
-  "version": "3.0.18",
+  "version": "3.0.19",
   "private": false,
   "description": "handle strings in smart ways. TypeScript ready.",
   "main": "dist_ts/index.js",
