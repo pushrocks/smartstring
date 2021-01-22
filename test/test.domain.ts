@@ -25,7 +25,7 @@ tap.test('expect have the correct protocol', async () => {
   expect(testDomain.protocol).equal('https');
 });
 tap.test('testDomain2 expect be a basic domain', async () => {
-  testDomain2 = new smartstring.Domain('bleu.de');
+  testDomain2 = new smartstring.Domain('testing.bleu.de');
   console.log(testDomain2);
 });
 

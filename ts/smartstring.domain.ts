@@ -17,11 +17,15 @@ export class Domain {
   public nodeParsedUrl: plugins.url.UrlWithStringQuery;
   constructor(domainStringArg: string) {
     // lets do the node standard stuff first
+    this.protocol = this._protocolRegex(domainStringArg);
+    if (!this.protocol) {
+      domainStringArg = `https://${domainStringArg}`
+    }
     this.nodeParsedUrl = plugins.url.parse(domainStringArg);
     this.port = this.nodeParsedUrl.port;
 
     // lets do the rest after
-    const regexMatches = this._domainRegex(domainStringArg.replace(this.nodeParsedUrl.path, ''));
+    const regexMatches = this._domainRegex(domainStringArg.replace(this.nodeParsedUrl.pathname, ''));
     this.fullName = '';
     for (let i = 1; i <= 5; i++) {
       if (regexMatches[i - 1]) {
@@ -36,7 +40,6 @@ export class Domain {
         this['level' + i.toString()] = undefined;
       }
     }
-    this.protocol = this._protocolRegex(domainStringArg);
     this.zoneName = this.level2 + '.' + this.level1;
 
     // aliases
