@@ -29,4 +29,9 @@ tap.test('testDomain2 expect be a basic domain', async () => {
   console.log(testDomain2);
 });
 
+tap.test('should parse complex domains', async () => {
+  testDomain2 = new smartstring.Domain('https://sub1.sub2.lossless.com/some/path:5431');
+  console.log(testDomain2);
+});
+
 tap.start();

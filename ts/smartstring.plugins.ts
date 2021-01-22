@@ -15,10 +15,4 @@ const normalizeNewline = require('normalize-newline');
 const randomatic = smartenvInstance.getSafeNodeModule('randomatic');
 const cryptoRandomString = smartenvInstance.getSafeNodeModule('crypto-random-string');
 
-export {
-  jsBase64,
-  stripIndent,
-  normalizeNewline,
-  randomatic,
-  cryptoRandomString
-}
+export { jsBase64, stripIndent, normalizeNewline, randomatic, cryptoRandomString };

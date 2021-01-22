@@ -16,7 +16,12 @@ export class Domain {
   public port;
   public nodeParsedUrl: plugins.url.UrlWithStringQuery;
   constructor(domainStringArg: string) {
-    const regexMatches = this._domainRegex(domainStringArg);
+    // lets do the node standard stuff first
+    this.nodeParsedUrl = plugins.url.parse(domainStringArg);
+    this.port = this.nodeParsedUrl.port;
+
+    // lets do the rest after
+    const regexMatches = this._domainRegex(domainStringArg.replace(this.nodeParsedUrl.path, ''));
     this.fullName = '';
     for (let i = 1; i <= 5; i++) {
       if (regexMatches[i - 1]) {
@@ -38,9 +43,6 @@ export class Domain {
     this.topLevel = this.level1;
     this.domainName = this.level2;
     this.subDomain = this.level3;
-
-    this.nodeParsedUrl = plugins.url.parse(domainStringArg);
-    this.port = this.nodeParsedUrl.port;
   }
 
   // helper functions
